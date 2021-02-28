@@ -16,18 +16,9 @@ namespace PromoVentas.win
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             var productosBL = new ProductosBL();
             var listadeProductos = productosBL.ObtenerProductos();
-
-
-            foreach (var Producto in listadeProductos)
-            {
-             MessageBox.Show(Producto.Descripcion);
-            }
+            listadeProductosBindingSource.DataSource = listadeProductos;
         }
     }
 }
