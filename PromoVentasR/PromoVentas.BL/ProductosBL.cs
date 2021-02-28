@@ -16,12 +16,17 @@ namespace PromoVentas.BL
             _contexto = new Contexto();
             ListadeProductos = new List<Producto>();
         }
+
        public List<Producto> ObtenerProductos()
         {
-        ListadeProductos=  _contexto.Productos.ToList();
-            return ListadeProductos;
+           ListadeProductos=  _contexto.Productos.ToList();
+            return ListadeProductos;   
+        }
 
-           
+        public void GuardarProducto(Producto producto)
+        {
+            _contexto.Productos.Add(producto);
+            _contexto.SaveChanges();
         }
     }
 }
