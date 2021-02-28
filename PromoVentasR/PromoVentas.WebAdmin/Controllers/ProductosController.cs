@@ -53,5 +53,11 @@ namespace PromoVentas.WebAdmin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult Detalle(int id)
+        {
+            var producto = _productosBL.ObtenerProducto(id);
+            return View(producto);
+        }
     }
 } 
